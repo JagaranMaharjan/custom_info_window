@@ -44,9 +44,9 @@ class CustomInfoWindow extends StatefulWidget {
 
   const CustomInfoWindow({
     required this.controller,
-    this.offset = 50,
-    this.height = 50,
-    this.width = 100,
+    this.offset = 0,
+    this.height = 0,
+    this.width = 0,
   })  : assert(controller != null),
         assert(offset != null),
         assert(offset >= 0),
@@ -131,7 +131,7 @@ class _CustomInfoWindowState extends State<CustomInfoWindow> {
                 _latLng == null)
             ? false
             : true,
-        child: Container(
+        child: SizedBox(
           child: _child,
           height: widget.height,
           width: widget.width,
